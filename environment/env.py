@@ -10,8 +10,8 @@ from .passenger import Passenger
 from .elevator import Elevator
 from .logger import get_my_logger
 
-def make(nElevator, nFloor, spawnRates, avgWeight, weightLimit, loadTime, version, dst_pref=None):
 
+def make(nElevator, nFloor, spawnRates, avgWeight, weightLimit, loadTime, version=1, dst_pref=None):
     '''
     nElevator:     Number of elevators
     nFloor:        Number of floors
@@ -241,8 +241,6 @@ class Environment():
             if not down:
                 self.hall_calls_down[fl] = 0
 
-            
-
     def trigger_epoch_event(self, event_type):
         self.epoch_events[event_type].succeed(event_type)
         self.epoch_events[event_type] = self.simenv.event()
@@ -390,7 +388,6 @@ class Environment():
             'carrying_weight':              carrying_weight,
             'time_elapsed':                 time_elapsed
         }
-
 
 
 class Environment_v1(Environment):

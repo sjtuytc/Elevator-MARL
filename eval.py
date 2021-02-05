@@ -1,5 +1,4 @@
 import sys
-sys.path.insert(0, '/Users/shatianwang/Desktop/Elevator-MARL')
 import environment as gym
 import random
 import time
@@ -23,7 +22,9 @@ answer = input('Starting testing?: [y/n]')
 if not answer or answer[0].lower() != 'y':
     exit(1)
 
+
 logger = gym.logger.get_my_logger(__name__)
+
 
 def timed_function(func):
     def decorated_func(*args, **kwargs):
@@ -33,6 +34,7 @@ def timed_function(func):
         logger.info("{} finished in {} seconds".format(func.__name__,e-s))
         return output
     return decorated_func
+
 
 if __name__=="__main__":
     logging.disable(logging.NOTSET)

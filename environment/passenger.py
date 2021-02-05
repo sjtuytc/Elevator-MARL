@@ -1,11 +1,10 @@
-class Passenger():
+class Passenger:
     def __init__(self, weight, floor, destination, time):
         self.weight = weight
         self.floor = floor
         self.destination = destination
         self.elevator = None
         self.created_at = time
-
 
     def enter(self, elevator):
         '''
